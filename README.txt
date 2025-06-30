@@ -1,11 +1,41 @@
 
-
+ENV:
 - Java 17
 - Maven
 - JUnit 5
 - Eclipse IDE
 
+RUN:
 java -cp target/CSGWords-0.0.1-SNAPSHOT.jar com.csg.wordindexer.WordProcessor input.txt
+
+
+OUTPUT:
+INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.csg.wordindexer.[1mWordProcessorTest[m
+Number of words starting with 'M' or 'm': 6
+Words longer than 5 characters:
+Monkey
+moonlight
+mountain
+market
+example
+development
+Number of words starting with 'M' or 'm': 6
+Words longer than 5 characters:
+2Monkey
+moonlight
+mountain
+example
+develop
+[INFO] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.158 s -- in com.csg.wordindexer.[1mWordProcessorTest[m
+
+
+
+
+
+
+
 
 
 
