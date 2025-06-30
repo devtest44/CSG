@@ -25,7 +25,18 @@ public class WordProcessor {
 
     public static void main(String[] args) throws IOException {
         
+        if (args.length == 0) {
+            System.err.println("Please provide the input file name as an argument.");
+            System.exit(1);
+        }
+
+        String fileName = args[0];
         List<Rule> rules = List.of(new StartsWithMRule(), new LongerThanFiveCharsRule());
-        new WordProcessor(rules).processFile("input.txt");
+        new WordProcessor(rules).processFile(fileName);
+    	
+    	
+    	
+        //List<Rule> rules = List.of(new StartsWithMRule(), new LongerThanFiveCharsRule());
+        //new WordProcessor(rules).processFile("input.txt");
     }
 }

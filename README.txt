@@ -1,4 +1,15 @@
 
+
+- Java 17
+- Maven
+- JUnit 5
+- Eclipse IDE
+
+java -cp target/CSGWords-0.0.1-SNAPSHOT.jar com.csg.wordindexer.WordProcessor input.txt
+
+
+
+
 A lightweight Java-based word indexing tool that counts specific word types and extracts long words from a file. Built using Maven.
 
 
@@ -13,10 +24,7 @@ Unit-tested with JUnit
 
 
 
-- Java 17
-- Maven
-- JUnit 5
-- Eclipse IDE
+
 
 
 Problem Statement:
@@ -59,7 +67,30 @@ Design Comparison:
 Approach Memory Efficient Easy to Extend Stream-safe
 
 
+v1 Original (String array) simple
+v3 Drools (overly complex, not readily integratable)
+v3 Stream-based (final) memory efficient, stream safe
 
+=======================================================
+
+
+
+Handling Edge Cases:
+This implementation uses a basic regular expression to split words using non-alphabetic characters. For example, input like:
+"2Monkey *moonlight m-o-o-n M**eet mountain ^/m arket example test \develop%ment"
+is split on non-word characters (like *, %, slashes, dashes, etc.).
+
+However, in real-world scenarios, the business rules should clarify:
+
+What counts as a word?
+
+Should hyphenated or prefixed strings like "m-o-o-n" or "2Monkey" be included?
+
+Should symbols or numbers attached to words be stripped or preserved?
+
+Are case sensitivity and accents relevant?
+
+These edge cases should be discussed with stakeholders and written into formal rule definitions to avoid ambiguity.
 
 
 
