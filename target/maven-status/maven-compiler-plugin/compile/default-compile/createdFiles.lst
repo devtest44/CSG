@@ -1,0 +1,4 @@
+com/csg/wordindexer/Rule.class
+com/csg/wordindexer/StartsWithMRule.class
+com/csg/wordindexer/LongerThanFiveCharsRule.class
+com/csg/wordindexer/WordProcessor.class
